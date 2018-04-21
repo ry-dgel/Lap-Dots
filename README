@@ -1,5 +1,7 @@
 Dot files associated with recent post to /r/unixporn. Laptop setup.
-[!The Setupd](https://i.imgur.com/HPFxrNW.png)
+
+![The Setup](https://i.imgur.com/HPFxrNW.png)
+
 Scripts contains a few scripts that are called by various other programs, these
 are assumed to be in $HOME/Scripts. 
 
