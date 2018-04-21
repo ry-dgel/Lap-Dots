@@ -1,0 +1,20 @@
+Dot files associated with recent post to /r/unixporn. Laptop setup.
+[!The Setupd](https://i.imgur.com/HPFxrNW.png)
+Scripts contains a few scripts that are called by various other programs, these
+are assumed to be in $HOME/Scripts. 
+
+I've provided my .xinit, but it contains a few things you probably don't want
+or need, so go through that one and take out anything not needed.
+
+Have fun tweaking the pixel commands in sxhkdrc and polybar config.
+
+neovim config requires vimplug.
+
+Files go in:
+~/.zshrc
+~/.xinitrc
+~/.config/sxhkd/sxhkdrc
+~/.config/bspwm/bspwmrc
+~/.config/polybar/config
+~/.config/termite/config
+~/.config/nvim/init.vim

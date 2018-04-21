@@ -1,0 +1,39 @@
+#!/usr/bin/python2
+
+#####CONFIGURATION#####
+penname="ELAN2514:00 04F3:259B Pen Pen \(0\)"
+touchname="ELAN2514:00 04F3:259B"
+
+#####PROGRAM CODE#####
+#Do not change unless you know what you are doing!
+
+from gtk import gdk
+from xinput import operate_xinput_device, MODE_ENABLE, MODE_DISABLE
+import time
+
+rootw = gdk.Screen().get_root_window()
+
+for d in gdk.devices_list():
+  if d.name == penname and d.num_axes == 3:
+    pen = d
+
+on = True
+samecount = 0
+oldpos = pen.get_state(rootw)
+
+while True:
+  print pen.get_state(rootw)
+  if pen.get_state(rootw) == oldpos:
+    samecount += 1
+    if samecount >= 2:
+      samecount = 0;
+      if not on:
+        on = True
+        operate_xinput_device(MODE_ENABLE, touchname)
+  else:
+    if on:
+      on = False
+      operate_xinput_device(MODE_DISABLE, touchname)
+    samecount = 0
+    oldpos = pen.get_state(rootw)    
+  time.sleep(0.1)

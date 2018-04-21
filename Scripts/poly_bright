@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Wait until the processes have been shut down
+if pgrep -x -f polybar\ brightness >/dev/null
+then
+    exit 1
+else
+    # Launch brightness bar
+    polybar brightness & 
+    sleep 2
+    pkill -f polybar\ brightness
+fi

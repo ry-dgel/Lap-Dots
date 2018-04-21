@@ -1,0 +1,7 @@
+#! /bin/zsh
+confgap=$(cat $HOME/.config/bspwm/bspwmrc | grep window_gap | awk '{print $4}')
+if [[ confgap -eq $(bspc config window_gap) ]]; then
+    bspc config window_gap 0
+else
+    bspc config window_gap ${confgap}
+fi
